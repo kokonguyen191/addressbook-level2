@@ -105,6 +105,8 @@ public class StorageFile {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(toSave, fileWriter);
 
+        } catch (FileNotFoundException fnfe) {
+            throw new StorageOperationException("The storage file is not found or has been set to read-only: " + path);
         } catch (IOException ioe) {
             throw new StorageOperationException("Error writing to file: " + path);
         } catch (JAXBException jaxbe) {
