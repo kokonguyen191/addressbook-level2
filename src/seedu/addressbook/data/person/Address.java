@@ -18,14 +18,17 @@ public class Address {
 
     public final String value;
     private boolean isPrivate;
-
     private Block block;
     private Street street;
     private Unit unit;
     private PostalCode postalCode;
+    private static final int BLOCK_INDEX = 0;
+    private static final int STREET_INDEX = 1;
+    private static final int UNIT_INDEX = 2;
+    private static final int POSTALCODE_INDEX = 3;
 
     /**
-     * Validates given postal code.
+     * Validates given address.
      *
      * @throws IllegalValueException if given address string is invalid.
      */
@@ -38,10 +41,10 @@ public class Address {
         }
 
         this.value = trimmedAddress;
-        this.block = new Block(splitAddress[0]);
-        this.street = new Street(splitAddress[1]);
-        this.unit = new Unit(splitAddress[2]);
-        this.postalCode = new PostalCode(splitAddress[3]);
+        block = new Block(splitAddress[BLOCK_INDEX]);
+        street = new Street(splitAddress[STREET_INDEX]);
+        unit = new Unit(splitAddress[UNIT_INDEX]);
+        postalCode = new PostalCode(splitAddress[POSTALCODE_INDEX]);
     }
 
     /**
@@ -50,10 +53,10 @@ public class Address {
     public static boolean isValidAddress(String test) {
         String[] splitAddress = test.split(", ");
         return splitAddress.length == 4
-                && isValidBlock(splitAddress[0])
-                && isValidStreet(splitAddress[1])
-                && isValidUnit(splitAddress[2])
-                && isValidPostalCode(splitAddress[3]);
+                && isValidBlock(splitAddress[BLOCK_INDEX])
+                && isValidStreet(splitAddress[STREET_INDEX])
+                && isValidUnit(splitAddress[UNIT_INDEX])
+                && isValidPostalCode(splitAddress[POSTALCODE_INDEX]);
     }
 
     @Override
