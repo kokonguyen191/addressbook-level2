@@ -1,8 +1,11 @@
 package seedu.addressbook.common;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Utility methods
@@ -33,5 +36,14 @@ public class Utils {
             }
         }
         return true;
+    }
+
+    /**
+     * Return true if two set of strings are not disjoint, regardless of capitalization.
+     */
+    public static boolean isCaseInsensitiveMatched(Set<String> firstSet, Set<String> secondSet) {
+        List<String> firstSetInLowerCase = firstSet.stream().map(String::toLowerCase).collect(Collectors.toList());
+        List<String> secondSetInLowerCase = secondSet.stream().map(String::toLowerCase).collect(Collectors.toList());
+        return Collections.disjoint(firstSetInLowerCase, secondSetInLowerCase);
     }
 }
