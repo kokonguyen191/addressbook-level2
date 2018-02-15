@@ -44,6 +44,6 @@ public class Utils {
     public static boolean isCaseInsensitiveMatched(Set<String> firstSet, Set<String> secondSet) {
         List<String> firstSetInLowerCase = firstSet.stream().map(String::toLowerCase).collect(Collectors.toList());
         List<String> secondSetInLowerCase = secondSet.stream().map(String::toLowerCase).collect(Collectors.toList());
-        return Collections.disjoint(firstSetInLowerCase, secondSetInLowerCase);
+        return !Collections.disjoint(firstSetInLowerCase, secondSetInLowerCase);
     }
 }
