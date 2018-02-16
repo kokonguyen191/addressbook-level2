@@ -1,10 +1,5 @@
 package seedu.addressbook.ui;
 
-import static seedu.addressbook.common.Messages.MESSAGE_GOODBYE;
-import static seedu.addressbook.common.Messages.MESSAGE_INIT_FAILED;
-import static seedu.addressbook.common.Messages.MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE;
-import static seedu.addressbook.common.Messages.MESSAGE_USING_STORAGE_FILE;
-import static seedu.addressbook.common.Messages.MESSAGE_WELCOME;
 import static seedu.addressbook.ui.Formatter.formatEchoUserCommandMessage;
 import static seedu.addressbook.ui.Formatter.formatEnterCommandMessage;
 import static seedu.addressbook.ui.Formatter.formatFeedbackToUser;
@@ -19,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
-
 import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 
@@ -108,7 +102,7 @@ public class TextUi {
     public void showToUser(String message) {
         out.print(message);
     }
-    
+
     public void showFeedbackToUser(CommandResult result) {
         showToUser(formatFeedbackToUser(result));
     }

@@ -1,16 +1,15 @@
 package seedu.addressbook.ui;
 
-import seedu.addressbook.commands.CommandResult;
-
-import java.io.PrintStream;
-import java.util.List;
-
 import static seedu.addressbook.common.Messages.MESSAGE_ENTER_COMMAND;
 import static seedu.addressbook.common.Messages.MESSAGE_GOODBYE;
 import static seedu.addressbook.common.Messages.MESSAGE_INIT_FAILED;
 import static seedu.addressbook.common.Messages.MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE;
 import static seedu.addressbook.common.Messages.MESSAGE_USING_STORAGE_FILE;
 import static seedu.addressbook.common.Messages.MESSAGE_WELCOME;
+
+import java.io.PrintStream;
+import java.util.List;
+import seedu.addressbook.commands.CommandResult;
 
 /**
  * Text formatter of the application.
