@@ -19,7 +19,8 @@ public class Contact {
      *
      * @throws IllegalValueException if given contact string is invalid.
      */
-    public Contact(String contact, boolean isPrivate, String messageContactConstraints, String contactValidationRegex) throws IllegalValueException {
+    public Contact(String contact, boolean isPrivate, String messageContactConstraints,
+            String contactValidationRegex) throws IllegalValueException {
         String trimmedAddress = contact.trim();
         this.isPrivate = isPrivate;
         this.messageContactConstraints = messageContactConstraints;
@@ -40,13 +41,6 @@ public class Contact {
     @Override
     public String toString() {
         return value;
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        return other == this // short circuit if same object
-                || (other instanceof Contact // instanceof handles nulls
-                && this.value.equals(((Contact) other).value)); // state check
     }
 
     @Override
