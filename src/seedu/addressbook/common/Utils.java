@@ -25,7 +25,8 @@ public class Utils {
     }
 
     /**
-     * Returns true if every element the given collection are unique by {@link Object#equals(Object)}.
+     * Returns true if every element the given collection are unique by {@link
+     * Object#equals(Object)}.
      */
     public static boolean elementsAreUnique(Collection<?> items) {
         final Set<Object> testSet = new HashSet<>();
@@ -42,8 +43,10 @@ public class Utils {
      * Return true if two set of strings are not disjoint, regardless of capitalization.
      */
     public static boolean isCaseInsensitiveMatched(Set<String> firstSet, Set<String> secondSet) {
-        List<String> firstSetInLowerCase = firstSet.stream().map(String::toLowerCase).collect(Collectors.toList());
-        List<String> secondSetInLowerCase = secondSet.stream().map(String::toLowerCase).collect(Collectors.toList());
+        List<String> firstSetInLowerCase = firstSet.stream().map(String::toLowerCase)
+                .collect(Collectors.toList());
+        List<String> secondSetInLowerCase = secondSet.stream().map(String::toLowerCase)
+                .collect(Collectors.toList());
         return !Collections.disjoint(firstSetInLowerCase, secondSetInLowerCase);
     }
 }

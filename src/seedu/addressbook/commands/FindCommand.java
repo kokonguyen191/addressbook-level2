@@ -1,11 +1,9 @@
 package seedu.addressbook.commands;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import seedu.addressbook.common.Utils;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 
@@ -17,10 +15,11 @@ public class FindCommand extends Command {
 
     public static final String COMMAND_WORD = "find";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons whose names contain any of "
-            + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
-            + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
-            + "Example: " + COMMAND_WORD + " alice bob charlie";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Finds all persons whose names contain any of "
+                    + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
+                    + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
+                    + "Example: " + COMMAND_WORD + " alice bob charlie";
 
     private final Set<String> keywords;
 
@@ -42,7 +41,8 @@ public class FindCommand extends Command {
     }
 
     /**
-     * Retrieves all persons in the address book whose names contain some of the specified keywords.
+     * Retrieves all persons in the address book whose names contain some of the specified
+     * keywords.
      *
      * @param keywords for searching
      * @return list of persons found
